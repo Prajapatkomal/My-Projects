@@ -1,0 +1,410 @@
+{
+  "products": [
+      {
+        "category": "Mens Clothing",
+        "title": "Regular Fit Crinkled resort shirt",
+        "image": "../../src/assets/ProductImage/menTshirt4.jpg",
+        "price": 1400,
+        "delivery": "free delivery"
+      },
+      {
+        "category": "Mens Clothing",
+        "title": "Regular Fit Oxford shirt",
+        "image": "../../src/assets/ProductImage/menShirt4.jpg",
+        "price": 599,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Mens Clothing",
+        "title": "reyon Tshirt",
+        "image": "../../src/assets/ProductImage/menTshirt1.jpg",
+        "price": 859,
+        "delivery": "free delivery"
+      },
+      {
+      
+        "category": "Mens Clothing",
+        "title": "cargo pants cotton",
+        "image": "../../src/assets/ProductImage/MenTrouser.jpg",
+        "price": 859,
+        "delivery": "free delivery"
+      },
+      {
+      
+        "category": "Mens Clothing",
+        "title": "mens Shirt",
+        "image": "../../src/assets/ProductImage/menShirt1.jpg",
+        "price": 949,
+        "delivery": "free delivery"
+      },
+      {
+      
+        "category": "Mens Clothing",
+        "title": "cotton shirt",
+        "image": "../../src/assets/ProductImage/menShirt2.jpg",
+        "price": 999,
+        "delivery": "free delivery"
+      },
+      {
+    
+        "category": "Mens Clothing",
+        "title": "letest New Branded shirt",
+        "image": "../../src/assets/ProductImage/menShirt3.jpg",
+        "price": 969,
+        "delivery": "free delivery"
+      },
+      {
+    
+        "category": "Mens Clothing",
+        "title": "mens pants cotton",
+        "image": "../../src/assets/ProductImage/menTrouser2.jpg",
+        "price": 939,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Mens Clothing",
+        "title": "mens letest designed pants",
+        "image": "../../src/assets/ProductImage/menTrouser3.jpg",
+        "price": 1300,
+        "delivery": "free delivery"
+      },
+      {
+      
+        "category": "Mens Clothing",
+        "title": "mens letest colured T-shirt",
+        "image": "../../src/assets/ProductImage/menTshirt2.jpg",
+        "price": 854,
+        "delivery": "free delivery"
+      },
+      {
+    
+        "category": "Mens Clothing",
+        "title": "mens T-shirt",
+        "image": "../../src/assets/ProductImage/menTshirt3.jpg",
+        "price": 799,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Womens Clothing",
+        "title": "Tiger Designed Top",
+        "image"    : "../../src/assets/ProductImage/womenTop2.jpg",
+        "price": 599,
+        "delivery": "free delivery"
+      },
+   
+      {
+     
+        "category": "Womens Clothing",
+        "title": "cotton gown",
+        "image": "../../src/assets/ProductImage/womenDress1.jpg",
+        "price": 989,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Womens Clothing",
+        "title": "Two Combo T-shirt",
+        "image"    : "../../src/assets/ProductImage/womenTop3.jpg",
+        "price": 2100,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Womens Clothing",
+        "title": "night gown",
+        "image": "../../src/assets/ProductImage/womenDress2.jpg",
+        "price": 999,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Womens Clothing",
+        "title": "Wide High Jeans",
+        "image"    : "../../src/assets/ProductImage/womenPant4.jpg",
+        "price": 1109,
+        "delivery": "free delivery"
+      },
+
+
+      {   
+      
+        "category": "Womens Clothing",
+        "title": "Black coloured latest pant",
+        "image"    : "../../src/assets/ProductImage/womenPant.jpg",
+        "price": 899,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Womens Clothing",
+        "title": "blue coloured jeans",
+        "image"    : "../../src/assets/ProductImage/womenPant2.jpg",
+        "price": 1399,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Womens Clothing",
+        "title": "cotton designed kurti",
+        "image"    : "../../src/assets/ProductImage/womenTop4.jpg",
+        "price": 799,
+        "delivery": "free delivery"
+      },
+    
+    
+      {
+     
+        "category": "Womens Clothing",
+        "title": "desined saree",
+        "image"    : "../../src/assets/ProductImage/womenSaree1.jpg",
+        "price": 759,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Womens Clothing",
+        "title": "crop Top",
+        "image"    : "../../src/assets/ProductImage/womenTop.jpg",
+        "price": 879,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Womens Clothing",
+        "title": " latest pant",
+        "image"    : "../../src/assets/ProductImage/womenPant3.jpg",
+        "price": 1400,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Womens Clothing",
+        "title": "Banarsi saree",
+        "image"    : "../../src/assets/ProductImage/womenSaree3.jpg",
+        "price": 3499,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Womens Clothing",
+        "title": "Printed Top",
+        "image"    : "../../src/assets/ProductImage/womenTop.jpg",
+        "price": 599,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Womens Clothing",
+        "title": "Printed Top",
+        "image"    : "../../src/assets/ProductImage/womenTop5.jpg",
+        "price": 1800,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Womens Clothing",
+        "title": "black coloured dress",
+        "image"    : "../../src/assets/ProductImage/womenDress4.jpg",
+        "price": 1399,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Kids Products",
+        "title": "kids cotton Dress",
+        "image"    : "../../src/assets/ProductImage/kidsDress1.jpg",
+        "price": 899,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Kids Products",
+        "title": " Attractctive Videogame toy",
+        "image"    : "../../src/assets/ProductImage/kidsToy1.jpg",
+        "price": 3400,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Kids Products",
+        "title": "Alphabet style Dress for kids",
+        "image"    : "../../src/assets/ProductImage/kidsDress2.jpg",
+        "price": 1300,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Kids Products",
+        "title": "Spacel for kids toy",
+        "image"    : "../../src/assets/ProductImage/kidsToy2.jpg",
+        "price": 999,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Kids Products",
+        "title": " Printed pants   ",
+        "image"    : "../../src/assets/ProductImage/kidsPant1.jpg",
+        "price": 1299,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Kids Products",
+        "title": "cotton comfortable pants",
+        "image"    : "../../src/assets/ProductImage/kidsPant2.jpg",
+        "price": 1500,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Kids Products",
+        "title": "latest designed pants",
+        "image"    : "../../src/assets/ProductImage/kidsPant3.jpg",
+        "price": 2000,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Kids Products",
+        "title": "bubble machine toy ",
+        "image"    : "../../src/assets/ProductImage/kidsToy3.jpg",
+        "price": 299,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "Kids Products",
+        "title": "cotton Dress",
+        "image"    : "../../src/assets/ProductImage/kidsDress3.jpg",
+        "price": 799,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "sports  Products",
+        "title": "Mrbeast bascetball",
+        "image"    : "../../src/assets/ProductImage/sport01.webp",
+        "price": 799,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "sports  Products",
+        "title": "Airstrike",
+        "image"    : "../../src/assets/ProductImage/sport02.webp",
+        "price": 2499,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "sports  Products",
+        "title": "Premium Gym Accessories combo set",
+        "image"    : "../../src/assets/ProductImage/sports3.webp",
+        "price": 3909,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "sports  Products",
+        "title": "Nivia running backpack",
+        "image"    : "../../src/assets/ProductImage/sport4.webp",
+        "price": 899,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "sports  Products",
+        "title": "3D sports knee pad",
+        "image"    : "../../src/assets/ProductImage/sport5.webp",
+        "price": 699,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "sports  Products",
+        "title": "Soogree Sport Goggles ",
+        "image"    : "../../src/assets/ProductImage/sport6.webp",
+        "price": 799,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "sports  Products",
+        "title": "Beta sports club official kit",
+        "image"    : "../../src/assets/ProductImage/sport7.webp",
+        "price": 699,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "sports  Products",
+        "title": "Resistance Band Set ",
+        "image"    : "../../src/assets/ProductImage/sport8.jpg",
+        "price": 1200,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "baby  Products",
+        "title": "Red coloured baby cycle",
+        "image"    : "src/assets/ProductImage/baby1.jpg",
+        "price": 4000,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "baby  Products",
+        "title": "3 cotton dress set",
+        "image"    : "../../src/assets/ProductImage/baby2.jpg",
+        "price": 1100,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "baby  Products",
+        "title": "baby bathing tub",
+        "image"    : "../../src/assets/ProductImage/baby3.jpg",
+        "price": 300,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "baby  Products",
+        "title": "baby dress kit",
+        "image"    : "../../src/assets/ProductImage/baby4.jpg",
+        "price": 690,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "baby  Products",
+        "title": "Aveeno baby shampoo",
+        "image"    : "../../src/assets/ProductImage/baby5.jpg",
+        "price": 500,
+        "delivery": "free delivery"
+      },
+      {
+     
+        "category": "baby  Products",
+        "title": "2 pack jersey payjama",
+        "image"    : "../../src/assets/ProductImage/baby6.jpg",
+        "price": 1200,
+        "delivery": "free delivery"
+      }
+     
+     
+      
+    ]
+  
+  } 
+
+       
+
+      
+  
+ 
+ 
