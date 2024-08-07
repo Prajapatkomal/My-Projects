@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Superhero Resume</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+
+    /* Parent div has 8 child divs  */
+
+    #child1 {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      padding: 20px;
+      gap: 50px;
+      background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEJerTIsMVST2JbQmWxFAd2Dz5N1bb5keGuEOc91EyvoclfETCB76XXr4i8Tqmxt6ZQQk&usqp=CAU);
+    }
+
+    #child1 .box1 {
+      gap: 30px;
+      height: 90%;
+      padding: 25px;
+    }
+
+    .hero {
+      padding-bottom: 20px;
+    }
+
+    #child1 :nth-child(3) {
+      grid-column-start: 3;
+      grid-column-end: 5;
+    }
+
+    #child1 .box1 img {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+    }
+
+    #child2 {
+      background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwdx9ZkI5V9Ml8gFhx0kfRK526VVu-kolGmD99WIHKcXukt6hdUfDJDMhtk0PztUBb6aE&usqp=CAU);
+      background-size: cover;
+      text-align: center;
+    }
+
+    #child2 img {
+      width: 30%;
+      height: 100%;
+    }
+
+    #child3 {
+      display: flex;
+      justify-content: space-between;
+      height: 100%;
+      width: 100%;
+    }
+
+    #child3 .box3 img {
+      height: 100%;
+      width: 100%;
+    }
+
+    #child3 :nth-child(1) {
+      animation: animate 1s linear infinite;
+    }
+
+    @keyframes animate {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+
+    #child3> :nth-child(2) {
+      background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCoP6i8XiavCd22nL1ymWL45YZlzWimQKFfQ&usqp=CAU);
+      background-size: cover;
+      border-radius: 30px;
+      width: 100%;
+      margin: 40px;
+      height: 70%;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+
+    #child3 .box3 p {
+      font-size: 40px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-weight: 2000;
+      color: white;
+      margin-left: 25px;
+    }
+
+    #child3 .box3 h3 {
+      color: white;
+      font-family: cursive;
+      margin-left: 20px;
+    }
+
+    #child3 .box3 h1 {
+      color: lightblue;
+      font-family: monospace;
+      font-weight: 900;
+      margin-left: 25px;
+    }
+
+    #child4 {
+      display: flex;
+      justify-content: space-around;
+      background-color: teal;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    #child4 audio {
+      width: 100%
+    }
+
+    #child4 p {
+      font-size: 2rem;
+    }
+
+    #child4 p:hover {
+      color: white;
+      cursor: pointer;
+    }
+
+    #child4 a {
+      color: darkred;
+      font-size: 25px;
+      text-decoration: none;
+    }
+
+    #child4 a:hover {
+      color: white;
+    }
+
+    #child5 {
+      background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqm4J-rWNz0441VUCZ_Inn6o48BolEU0hy0g&usqp=CAU);
+      background-size: cover;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      padding: 20px;
+    }
+
+    .box5 {
+      padding-left: 30px;
+    }
+
+    #child5> :nth-child(1) {
+      grid-area: 1/1/2/3;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-top: 20px;
+    }
+
+    #child5> :nth-child(2) p {
+      font-size: 15px;
+      font-weight: 600;
+      color: gray;
+    }
+
+    #child5> :nth-child(2) p,
+    h2 {
+      margin: 1px;
+      font-family: system-ui;
+    }
+
+    #child5> :nth-child(2) p {
+      margin-top: 20px;
+    }
+
+    #child5 p::first-letter {
+      font-size: 25px;
+    }
+
+    .detail>div {
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+      height: 100%;
+      padding: 40px;
+    }
+
+    .box5 h3 {
+      font-family: sans-serif;
+      color: darkslategray;
+    }
+
+
+    #child6 {
+      display: flex;
+      background-color: azure;
+      padding: 30px;
+    }
+
+    #child6 marquee img {
+      height: 300px;
+      width: 200px;
+      margin-right: 60px;
+    }
+
+    #child7 {
+      display: flex;
+      justify-content: space-around;
+      background-color: ivory;
+      height: 100%;
+      padding: 40px;
+    }
+
+    #child7> :nth-child(1) {
+      display: flex;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      flex-direction: column;
+      margin-top: 30px;
+      gap:50px;
+      text-align: center;
+      font-family: cursive;
+      font-weight: 1500;
+      color: navy;
+      padding-top: 60px;
+      height: 610px;
+    }
+    
+
+    #child7> :nth-child(2) {
+      box-shadow: rgba(34, 34, 49, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      padding: 30px;
+      margin: 30px;
+      text-align: center;
+      color: navy;
+      font-family: serif
+      
+    }
+
+    #child7> :nth-child(2) img {
+      width: 100%;
+      height: 90%;
+    }
+    
+
+    #child8 button {
+      width: 100%;
+      background-color: lightslategray;
+      margin-top: 30px;
+      color: maroon;
+      font-family: georgia;
+      font-size: 20px;
+    }
+ 
+
+    @media screen and (max-width: 767px) {
+      #child3 {
+        display: flex;
+        flex-direction: column}}
+
+
+    @media screen and (max-width: 767px) {
+      #child4 {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      #child5 {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      #child7 {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="parent">
+    <div id="child1">
+      <div class="box1">
+        <img src="images/captainmarvel.jpg" />
+      </div>
+      <div class="box1">
+        <img src="images/download (2).jpg" />
+      </div>
+      <div class="box1 hero">
+        <img src="images/superhero.jpg" />
+      </div>
+      <div class="box1">
+        <img src="images/iron man.jpg" />
+      </div>
+      <div class="box1">
+        <img src="images/download5.jpg" />
+      </div>
+    </div>
+
+    <div id="child2">
+      <img
+        src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/02b60eed-d9c8-4b8e-b826-3ed0694bcf26/detfvt3-06319355-664b-4251-a1ab-cc8a113fb56f.png/v1/fill/w_1186,h_597/captain_marvel_logo_by_lyriumrogue_detfvt3-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTk3IiwicGF0aCI6IlwvZlwvMDJiNjBlZWQtZDljOC00YjhlLWI4MjYtM2VkMDY5NGJjZjI2XC9kZXRmdnQzLTA2MzE5MzU1LTY2NGItNDI1MS1hMWFiLWNjOGExMTNmYjU2Zi5wbmciLCJ3aWR0aCI6Ijw9MTE4NiJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.4e-wq1jWGTfdW_jJloNNWmkcHiznO1oXjGdqWOQMWH0" />
+    </div>
+
+    <div id="child3">
+      <div class="box3">
+        <img src="images/marvel4.jpg" />
+      </div>
+      <div class="box3">
+        <p> PROFILE</p>
+        <h1>Carol DanversCaptain Marvel</h1>
+        <h3>Carol DanversCaptain Marvel
+          As a human-Kree hybrid,<br> the former Air Force pilot named Carol Danvers protects the galaxy as the cosmically
+          powerful Captain Marvel. <br>Near death, Carol Danvers was transformed into a powerful warrior for the Kree.<br>
+          Now, Carol is the latest warrior to embrace the mantle of Captain Marvel, and she has taken her place as one of the world’s mightiest heroes.</h3>
+      </div>
+    </div>
+    <div id="child4">
+      <div class="box4">
+        <h1>...Theme Music...</h1>
+        <audio src="marvel audio.mpeg" controls>
+        </audio>
+      </div>
+      <div class="box4">
+        <p><i class="fa fa-envelope"></i>
+          captainmarvel@marvel.com</p>
+        <p><i class="fa fa-phone"></i>
+          Contact-1-800-312-9951</p>
+        <h1> Website <a href="https://www.marvel.com/characters/captain-marvel-carol-danvers"
+            target="_blank">www.captainmarvel.com</a>
+        </h1>
+      </div>
+
+    </div>
+    <div id="child5">
+      <div class="box5 detail">
+        <div>
+          <h1>BIOGRAPHY</h1>
+          <hr>
+          <h2>Captain Marvel</h2>
+          <h3>Former Air Force pilot and intelligence agent Carol Danvers pursued her dream of space exploration as a
+            NASA employee, but her life forever changed when she was accidentally transformed into a human-Kree hybrid
+            with extraordinary powers.</h3>
+        </div>
+        <div>
+          <h1>POWERS</h1>
+          <hr>
+          <h3>1. Her Ability To Modify Herself On The Molecular Level May Allow Her To Change Her Appearance.<br>
+            2. Her Kree DNA Makes Here Immune To Most Poisons and Drugs.<br>
+            3. She Can Harness The Energy Of A White Hole.<br>
+            5. Gravity Is Yet Another Force She Can Control.<br>
+            6. She Doesn’t Have To Eat Or Sleep.<br>
+            7. Solar Energy Recharges Her
+          </h3>
+        </div>
+        <div>
+          <h1>SUMMARY</h1>
+          <hr>
+          <h3>
+            Captain Marvel's early years were marked by her being overshadowed by stronger characters and her lack of
+            involvement with the Avengers.
+            Throughout her journey, Captain Marvel formed a significant bond with Mar-Vell, who played a crucial role in
+            her development as a superhero.
+            Captain Marvel achieved her full potential as a god-tier warrior when she unlocked her Binary form,
+            showcasing her incredible strength and power.
+          </h3>
+        </div>
+      </div>
+      <div class="box5">
+        <p>Eye</p>
+        <h2>Blue</h2>
+        <p>Weight</p>
+        <h2>165lbs.</h2>
+        <p>Height</p>
+        <h2>5'11"</h2>
+        <p> UNIVERSE</p>
+        <h2> Marvel Universe</h2>
+        <p>OTHER ALIASES</p>
+        <h2>Ace, Binary, Lady Marvel, Warbird</h2>
+        <p>EDUCATION </p>
+        <h2>Extensive military training and acquired BA while in military</h2>
+        <p>PLACE OF ORIGIN</p>
+        <h2>Boston, Massachusetts</h2>
+        <p>IDENTITY</p>
+        <h2>Publicly known</h2>
+        <p>POWERS</p>
+        <h2>FlightEnergy BlastsSuperhuman DurabilitySuperhuman Strength</h2>
+        <p>GROUP AFFILIATION</p>
+        <h2>Alpha FlightAvengersA-ForceKree</h2>
+      </div>
+    </div>
+    <div id="child6">
+      <marquee>
+
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1s9OQUaQ6UuISG7NtzhXZle_zZO__WfxeMA&usqp=CAU" />
+        <img src="images/marvel7.jpg" />
+        <img src="images/marvel5.jpg" />
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm_8CScfeCa3t69KqadJIsov8eXofgA0f7U4fPEpnz2piVIYqpCUmvrl-wfA3CFsn_p38&usqp=CAU" />
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsQLRvEznznAMMBLfM9B5ezo2qnmOFKE8_D_I2DjZ5nVCKGC05mI4vVMxIgvfDmjZUA0I&usqp=CAU" />
+      </marquee>
+    </div>
+    <div id="child7">
+      <div>
+        <h1>The CAPTAIN MARVEL Trailer</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Z1BCujX3pw8?si=v7Qr76YHmiqTL69p"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      
+      </div>
+      <div>
+        <img src="images/team.jpg" />
+        <h2>Marvel Team</h2>
+      </div>
+    </div>
+
+    <div id="child8">
+      <button>
+        <h1>Made By Komal Prajapat</h1>
+      </button>
+    </div>
+
+
+
+
+  </div>
+</body>
+
+</html>
