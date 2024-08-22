@@ -4,6 +4,7 @@ import {userRouter} from "./router/user.router.js"
 import {notesRouter} from "./router/notes.router.js"
 import dotenv from "dotenv"
 dotenv.config()
+import cors from 'cors'
 
 app.use(cors({
     origin:"*"
