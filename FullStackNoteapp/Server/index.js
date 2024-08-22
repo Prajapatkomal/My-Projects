@@ -5,6 +5,10 @@ import {notesRouter} from "./router/notes.router.js"
 import dotenv from "dotenv"
 dotenv.config()
 
+app.use(cors({
+    origin:"*"
+}))
+
 const PORT = process.env.PORT || 5000
 const app = express()
 
@@ -13,7 +17,9 @@ app.use(express.json())
 app.use("/user",userRouter)
 app.use("/notes",notesRouter)
 
-
+app.get('/',(req,res)=>{
+    res.send("server is running fine ")
+})
 
 
 app.listen(PORT,async()=>{

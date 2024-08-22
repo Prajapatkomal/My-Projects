@@ -6,7 +6,7 @@ import {auth} from "../middlewares/auth.middleware.js"
 
 notesRouter.get("/get",auth,async(req,res)=>{
    const userId = req.user[0]._id
-   console.log(userId)
+
    try {
       const notes = await Notemodel.find({userId:userId})
       res.status(200).json({message:"here are the notes",notes:notes})
