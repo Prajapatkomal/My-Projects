@@ -1,5 +1,4 @@
 import express from "express"
-import mongoose from "mongoose"
 import cors from "cors"
 const app = express()
 import multer from "multer"
@@ -23,10 +22,9 @@ app.use(cors({
 
 app.use(express.json())
 
-app.use("/admin",adminRoute)
+app.use("/admin",auth,Role(["admin"]),adminRoute)
 app.use("/product",productRoute)
 app.use("/user",userRoute)
-
 
 
 app.get("/",(req,res)=>{
@@ -50,7 +48,7 @@ app.use("/images",express.static("upload/images"))
 app.post("/upload",upload.single("product"),(req,res)=>{
     res.json({
          success: 1,
-         image_url:`http://localhost:${port}/images/${req.file.filename}`
+         image_url:`images/${req.file.filename}`
     })
 })
 
