@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: Backend
+    env: node
+    plan: free
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    pullRequestPreviewsEnabled: true
