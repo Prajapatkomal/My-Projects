@@ -2,6 +2,8 @@ const express = require("express");
 const { UserModel } = require("../model/user.model");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const { auth } = require("../middleware/auth.middleware");
+
 
 const userRouter = express.Router();
 
@@ -44,7 +46,7 @@ userRouter.post("/login", async (req, res) => {
       bcrypt.compare(password, user.password, (err, result) => {
         if (result) {
           const token = jwt.sign(
-            { userId: user._id, user: user.userName },
+            { userId: user._id, userName: user.userName },
             process.env.SECRET_KEY
           );
           return res.status(200).json({ msg: "User logged in Succesfully", token });
@@ -58,5 +60,48 @@ userRouter.post("/login", async (req, res) => {
   }
   const user = await UserModel.findOne({ email });
 });
+
+
+
+userRouter.get("/",auth,async(req,res)=>{
+  try {
+       const id = req.userId
+       const user = await UserModel.findById(id)
+       res.status(200).json({msg:"user fetched Successfully",user})
+
+  } catch (error) {
+        res.status(404).json({ error: error.message });
+  }
+})
+
+
+userRouter.put("/update",auth,async(req,res)=>{
+  try {
+    const {userName,password,address,phone} = req.body
+       const id = req.userId
+      const user = await UserModel.findById(id) 
+
+      const newHashPassword = password ? await bcrypt.hash(password, 5) :null
+      if(phone.length !== 10 ){
+         return res.status(400).json({ msg: "Phone number must be 10 digits" });
+      }
+
+       const updatedUser = await UserModel.findByIdAndUpdate(id,{
+            userName :userName || user.userName,
+            password : newHashPassword || user.password,
+            address :address || user.address,
+            phone :phone || user.phone,
+       },{new:true})
+       res.status(200).json({msg:"user Updated Successfully",updatedUser})
+
+  } catch (error) {
+        res.status(404).json({ error: error.message });
+  }
+})
+
+
+   
+
+
 
 module.exports = { userRouter };

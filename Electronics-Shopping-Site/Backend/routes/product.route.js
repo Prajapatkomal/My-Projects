@@ -4,8 +4,11 @@ const fs = require("fs");
 const { auth } = require("../middleware/auth.middleware");
 const { isAdmin } = require("../middleware/isAdmin.middleware");
 const formidable = require("express-formidable");
+const dotenv = require("dotenv");
+dotenv.config()
 
 const productRouter = express.Router();
+
 
 // create product----------------------
 
@@ -70,7 +73,7 @@ productRouter.get("/products", async (req, res) => {
     return res.status(200).json({ msg: "All products", products ,totalProducts: products.length});
   } catch (error) {
     console.log(error);
-    res.status(500).json("error in getting product");
+    res.status(500).json({msg:"error in getting product",error});
   }
 });
 
@@ -85,7 +88,7 @@ productRouter.get("/product/:id", async (req, res) => {
     return res.status(200).send({ msg: "single product fetched", product });
   } catch (error) {
     console.log(error);
-    res.status(500).json("msg:error in getting single product");
+    res.status(500).json({msg:"error in getting single product",error});
   }
 });
 
@@ -103,7 +106,7 @@ productRouter.get("/product-photo/:id", async (req, res) => {
       return res.status(404).json({ error: "Photo not found" });
     }
   } catch (error) {
-    return res.status(500).json({ error: "error in getting photo" });
+    return res.status(500).json({msg: "error in getting photo",error });
   }
 });
 
@@ -126,7 +129,7 @@ productRouter.delete(
         .status(200)
         .json({ msg: "product deletd successfully", product });
     } catch (error) {
-      return res.status(500).json({ msg: "error in deleting product" });
+      return res.status(500).json({ msg: "error in deleting product" ,error});
     }
   }
 );
@@ -177,9 +180,42 @@ productRouter.put(
         .json({ msg: "product updated successfully", product });
     } catch (error) {
       console.log(error);
-      return res.status(500).json({ msg: "error in updating product" });
+      return res.status(500).json({ msg: "error in updating product" ,error});
     }
   }
 );
+
+
+
+productRouter.get("/search-product/:keyword", async (req, res) => {
+  const { keyword } = req.params;
+  try {
+    const product = await ProductModel.find({$or:[{name:{$regex:keyword, $options:"i"}},
+      {description:{$regex:keyword, $options:"i"}}]}
+    )
+      .select("-photo")
+    return res.status(200).json({ msg: "searched product fetched", product });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({msg:"error in serach product",error});
+  }
+});
+
+
+
+productRouter.post("/product-filterByPrice",async(req,res)=>{
+   try {
+         const {radio} = req.body
+         let arg ={}
+         if(radio.length) arg.price = {$gte:radio[0] , $lte:radio[1]}
+         const products = await ProductModel.find(arg)
+         res.status(200).json({msg:"products based on price",products})
+   } catch (error) {
+     return res.status(500).json({msg:"Error while filtering products",error})
+   }
+})
+
+
+
 
 module.exports = { productRouter };
