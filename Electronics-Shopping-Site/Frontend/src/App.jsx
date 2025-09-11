@@ -9,7 +9,7 @@ import AdminDashboard from "./pages/Admin/AdminDashboard";
 import Order from "./pages/Admin/Order";
 import Products from "./pages/Admin/Products";
 import CreateProduct from "./pages/Admin/CreateProduct";
-import CreateCategory from "./pages/Admin/createCategory";
+import CreateCategory from "./pages/Admin/CreateCategory";
 import UpdateProduct from "./pages/Admin/UpdateProduct";
 import { ProductDetail } from "./pages/ProductDetail/ProductDetail";
 import SearchProduct from "./pages/SearchProduct/SearchProduct";
