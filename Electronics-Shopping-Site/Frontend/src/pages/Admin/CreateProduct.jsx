@@ -3,6 +3,7 @@ import { AdminMenu } from "./AdminMenu";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import api from "../../api/api";
 
 const CreateProduct = () => {
   const initialValue = {
@@ -23,7 +24,7 @@ const CreateProduct = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/product-category");
+        const res = await api.get("/product-category");
         console.log(res.data.category);
         setCategoryData(res.data?.category);
       } catch (error) {
@@ -60,8 +61,8 @@ const CreateProduct = () => {
     // use formData in to create Product 
     const token = localStorage.getItem("token");
     try {
-      const res = await axios.post(
-        "http://localhost:3000/admin/createProduct",
+      const res = await api.post(
+        "/admin/createProduct",
         formData,
         {
           headers: {
@@ -85,11 +86,11 @@ const CreateProduct = () => {
   return (
     <div className="bg-blue-50 min-h-screen w-full ">
       <p className="text-center text-3xl py-10 font-bold">Create Product</p>
-      <div className="flex justify-between mr-[100px] ">
+      <div className="flex flex-col gap-5 lg:flex-row lg:justify-between lg:mr-[100px] ">
         <div>
           <AdminMenu />
         </div>
-        <div className="ml-[250px] w-full">
+        <div className=" lg:ml-[250px] w-full">
         <form
           onSubmit={handleSubmit}
           className="flex flex-col gap-5 w-full  "

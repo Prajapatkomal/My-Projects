@@ -1,0 +1,106 @@
+
+import Navbar from "../../components/Navbar/Navbar";
+import { useEffect, useState } from "react";
+import moment from "moment";
+import api from "../../api/api";
+
+const UserOrders = () => {
+  const [orders, setOrders] = useState([]);
+   const token =  localStorage.getItem("token")
+   
+  const getOrders = async () => {
+    try {
+      const { data } = await api.get("/user/orders", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setOrders(data.orders);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getOrders();
+  }, []);
+
+
+  return (
+    <div>
+      <Navbar />
+      <div className="mt-20 p-10">
+        <p className="text-center text-3xl font-semibold">All Orders</p>
+       </div>
+       <div>
+        {token?
+        <div className="overflow-x-auto rounded-box border  bg-base-100 m-5">
+          <table className="table">
+            <thead>
+              <tr className="text-xl">
+                <th>#</th>
+                <th>Status</th>
+                <th>Buyer_id</th>
+                <th>Date</th>
+                <th>Payment</th>
+                <th>Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              {orders?.map((o, i) => {                                       {/* Order details row */}
+                return (
+                  <>
+                  <tr key={i} className="bg-slate-50">
+                    <th>{i + 1}</th>
+                    <td>{o?.status}</td>
+                    <td>{o?.buyer?.userName}</td>
+                   <td>{moment(o?.createdAt).format("MMM D, YYYY, h:mm A")}</td>
+                    <td>{o?.payment?"Success":"Failed"}</td>
+                    <td>{o?.products.length}</td>
+                  </tr>                                                      {/* products details row */}
+                  <tr>
+                  <td colSpan={6}> 
+            <div  className="p-4 flex flex-wrap gap-10"> 
+                    {o?.products.map((p, i) => (                              
+                <div key={i}
+            className=" w-[350px] rounded-xl shadow-sm flex items-center gap-5 p-4 bg-white"
+          >
+            <img
+              className="h-28 w-28 object-cover rounded-lg"
+              src={`${import.meta.env.VITE_API_URL}/product-photo/${p._id}`}
+              alt={p.name}
+            />
+            <div className="flex flex-col justify-center">
+              <p className="font-semibold text-xs">{p.name}</p>
+              <p className="text-gray-500 text-sm">
+                {p.description.substring(0,20)}...
+              </p>
+               <p className="font-semibold">
+                ₹{p.price}
+              </p>
+            </div>
+          </div>
+            
+        ))}
+          </div>
+          </td>
+           </tr>
+                  </>
+                );
+              })}
+            </tbody>
+          </table>
+            
+            
+        </div>
+        :<div>
+          <p className="text-center text-red-700 font-semibold text-3xl">Please Login to view Orders</p>
+          </div>
+     }
+
+      </div>
+    </div>
+  );
+};
+
+export default UserOrders;

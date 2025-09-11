@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { AdminMenu } from "./AdminMenu";
-import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
-
+import api from "../../api/api"
 const UpdateProduct = () => {
 
   const initialValue = {
@@ -26,7 +25,7 @@ const UpdateProduct = () => {
 // fetching single product to update-----------
    const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/product/${id}`);
+        const res = await api.get(`/product/${id}`);
         console.log(res.data);
         const p = res.data.product
 
@@ -56,7 +55,7 @@ const UpdateProduct = () => {
     // fetching categories to create product -----------
   const fetchCategories = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/product-category");
+        const res = await api.get("/product-category");
         console.log(res.data.category);
         setCategoryData(res.data?.category);
       } catch (error) {
@@ -95,8 +94,8 @@ const UpdateProduct = () => {
 
 
     try {
-      const res = await axios.put(
-        `http://localhost:3000/admin/update-product/${id}`,
+      const res = await api.put(
+        `/admin/update-product/${id}`,
         formData,
         {
           headers: {
@@ -114,7 +113,7 @@ const UpdateProduct = () => {
 
     } catch (error) {
       console.log(error);
-      toast.error(error.response?.data?.error || "Something went wrong");
+      toast.error(error.response?.data?.msg || "Something went wrong");
     }
   };
 
@@ -123,7 +122,7 @@ const UpdateProduct = () => {
     try {
         const answer = window.confirm("Are You Sure To Delete This Product?")
         if(!answer) return;
-        const res = await axios.delete(`http://localhost:3000/admin/delete-product/${id}`,
+        const res = await api.delete(`/admin/delete-product/${id}`,
           {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -233,7 +232,7 @@ const UpdateProduct = () => {
         (
           <div className="mt-4 justify-center">
             <img
-              src={`http://localhost:3000/product-photo/${id}`}
+              src={`${import.meta.env.VITE_API_URL}/product-photo/${id}`}
               alt="Preview"
               className="w-40 h-40 object-cover rounded-md border"
             />

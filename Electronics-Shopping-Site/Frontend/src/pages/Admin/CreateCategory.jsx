@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { AdminMenu } from "./AdminMenu"
-import axios from "axios"
 import { useEffect } from "react"
 import { toast} from 'react-toastify';
+import api from "../../api/api";
 
 const CreateCategory = () => {
 const [category,setCategory] = useState("")
@@ -15,7 +15,7 @@ const token =  localStorage.getItem("token")
 useEffect(()=>{
    const fetchCategories = async()=>{
      try {
-        const res = await axios.get("http://localhost:3000/product-category")
+        const res = await api.get("/product-category")
         console.log(res.data.category)
          setCategoryData(res.data?.category)
     } catch (error) {
@@ -28,13 +28,13 @@ useEffect(()=>{
 
 const handleSubmit = async()=>{
   try {
-     const res = await axios.post("http://localhost:3000/admin/createCategory",{name:category},{
+     const res = await api.post("/admin/createCategory",{name:category},{
       headers:{
         "Content-Type":"application/json",
          Authorization : `Bearer ${token}`
       }
      })
-     console.log(res.data)
+ 
      toast(res.data.msg)
       setCategory("");        // clear input
       setReload(!reload);    //reload page when new category created
@@ -50,7 +50,7 @@ const handleSubmit = async()=>{
 
 const handleDelete = async(id)=>{
     try {
-         const res =  await axios.delete(`http://localhost:3000/admin/delete-category/${id}`,{
+         const res =  await api.delete(`/admin/delete-category/${id}`,{
              headers:{
          Authorization : `Bearer ${token}`
       }
@@ -69,7 +69,7 @@ const handleDelete = async(id)=>{
   return (
      <div className="bg-blue-50 min-h-screen w-full">
      <p className='text-center text-3xl py-10 font-bold'>Create Category</p>
-     <div className="flex justify-between mr-[200px] ">
+     <div className="w-full flex flex-col gap-5 lg:flex-row  lg:justify-between lg:pr-[100px] ">
          <AdminMenu/>
          <div>
           <div className="flex justify-around  w-[600px] gap-[20px] ">

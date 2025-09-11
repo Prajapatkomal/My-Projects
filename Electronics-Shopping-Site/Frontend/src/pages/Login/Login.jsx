@@ -3,8 +3,8 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { IoMdEye } from "react-icons/io";
 import { IoMdEyeOff } from "react-icons/io";
-import axios from "axios"
 import { toast} from 'react-toastify';
+import api from "../../api/api";
 
 
 const Login = () => {
@@ -14,6 +14,8 @@ const Login = () => {
   const[showPassword,setShowPassword] = useState(false)
 
 
+
+
 const handleChange =(e)=>{
   const {name,value} = e.target
   setUserInfo({...userInfo,[name]:value})
@@ -21,13 +23,11 @@ const handleChange =(e)=>{
 
 const handleSubmit = (e)=>{
  e.preventDefault()
- 
-
 }
 
 const handleSignUp =async()=>{
   try {
-      const res = await axios.post("http://localhost:3000/user/signup",userInfo)
+      const res = await api.post("/user/signup",userInfo)
     console.log(res.data)
     toast(res.data.msg || "Signup Successfully")
     setLoginState("true")
@@ -40,7 +40,7 @@ const handleSignUp =async()=>{
 
 const handleLogin =async()=>{
    try {
-      const res = await axios.post("http://localhost:3000/user/login",userInfo)
+      const res = await api.post("/user/login",userInfo)
     console.log(res.data)
     toast(res.data.msg || "Loged in Successfully")
     
@@ -75,7 +75,7 @@ const handleLogin =async()=>{
              </form>  
        
          <div className="flex flex-col mt-5">
-           {loginState?<p>New to Netflix <span className="text-blue-600 cursor-pointer" onClick={()=>{setLoginState(false)}}>Sign Up Now</span></p>
+           {loginState?<p>New User <span className="text-blue-600 cursor-pointer" onClick={()=>{setLoginState(false)}}>Sign Up Now</span></p>
             :<p>Already have an account <span className="text-blue-600 cursor-pointer"  onClick={()=>{setLoginState(true)}}>Sign In Now</span></p>}
          </div>
     </div>
