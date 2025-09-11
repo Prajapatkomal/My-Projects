@@ -14,8 +14,8 @@ import UpdateProduct from "./pages/Admin/UpdateProduct";
 import { ProductDetail } from "./pages/ProductDetail/ProductDetail";
 import SearchProduct from "./pages/SearchProduct/SearchProduct";
 import CartPage from "./pages/CartPage/CartPage";
-import { UserDashBoard } from "./pages/Profile/userDashBoard";
-import UserOrders from "./pages/Profile/userOrders";
+import { UserDashBoard } from "./pages/Profile/UserDashBoard";
+import UserOrders from "./pages/Profile/UserOrders";
 import { ProductPage } from "./pages/ProductPage/ProductPage";
 
 
