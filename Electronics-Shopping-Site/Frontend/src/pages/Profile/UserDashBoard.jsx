@@ -59,7 +59,6 @@ const handleUpdate  = async()=>{
             "Content-Type" :"application/json"
         }
       })
-    console.log(res.data)
     toast(res.data.msg || "Profile Updated Successfully")
     
   } catch (error) {
@@ -73,7 +72,7 @@ const handleUpdate  = async()=>{
   return (
     <div>
           <Navbar/>
-          <div className="mt-20 pt-10 text-center">
+          <div className="mt-20 pt-10  text-center">
               <p className="text-3xl font-semibold my-5">My Profile</p>
           </div>
           <div>

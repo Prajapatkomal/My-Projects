@@ -48,7 +48,7 @@ const Order = () => {
         <div>
              <AdminMenu/>
         </div>
-                <div className="overflow-x-auto rounded-box border  bg-base-100 w-full mr-5">
+                <div className="overflow-x-auto rounded-box border  bg-base-100 w-full mr-5 text-black">
                   <table className="table">
                     <thead>
                       <tr className="text-lg">

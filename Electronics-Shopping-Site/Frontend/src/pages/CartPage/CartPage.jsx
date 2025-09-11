@@ -101,7 +101,7 @@ const handlePayment = async () => {
       <Navbar />
       <CategoryNav />
       <div className="bg-white min-h-screen mt-32">
-    {cart.length !==0 && <p className="text-center pt-5 text-2xl">
+    {cart.length !==0 && <p className="text-center pt-5 text-2xl text-black">
     You have {cart.length} items in your cart
   </p>
    }
@@ -122,11 +122,11 @@ const handlePayment = async () => {
               alt={p.name}
             />
             <div className="flex flex-col justify-center">
-              <p className="font-semibold text-lg">{p.name}</p>
+              <p className="font-semibold text-lg text-black">{p.name}</p>
               <p className="text-gray-500 text-sm">
                 {p.description.substring(0, 30)}...
               </p>
-               <p className="font-semibold">
+               <p className="font-semibold text-black">
                 ₹{p.price}
               </p>
               <button className="text-white mt-2 bg-red-600 w-fit text-xs px-2 py-1 rounded-md" onClick={()=>handleRemove(p._id)}>Remove</button>
@@ -135,16 +135,16 @@ const handlePayment = async () => {
         ))}  
          </div>
          <div className="flex flex-col gap-2 p-10 text-center w-full"> 
-          <p className="text-xl">Total | Checkout | Payment | </p>
+          <p className="text-xl text-black">Total | Checkout | Payment | </p>
           <hr/>
-          <p className="text-2xl">Total: ₹{totalPrice()}</p>
+          <p className="text-2xl text-black">Total: ₹{totalPrice()}</p>
           <div className="border border-black w-fit text-center p-4 mx-auto">
-            <label className="font-semibold">Your Address:-</label>
+            <label className="font-semibold text-black">Your Address:-</label>
             <div>
                    <input className="border"  placeholder='building...' type="text"/><br/>
-                   <input className="border mt-1" placeholder="locality..." type="text"/><br/>
-                   <input className="border mt-1"placeholder="city..." type="text"/><br/>
-                    <input className="border mt-1"placeholder="pincode..." type="number"/><br/>
+                   <input className="border px-1 mt-1" placeholder="locality..." type="text"/><br/>
+                   <input className="border px-1 mt-1"placeholder="city..." type="text"/><br/>
+                    <input className="border px-1 mt-1"placeholder="pincode..." type="number"/><br/>
                    <button className="bg-slate-900 border-white rounded-md  text-white w-full mt-2">Save</button>
             </div>
             </div>
@@ -177,13 +177,13 @@ const handlePayment = async () => {
     ) : (
       // EMPTY MESSAGE
       <div className="border-b p-20 mx-20 text-center">
-        <p className="text-xl lg:text-4xl font-semibold">Your cart is empty</p>
+        <p className=" text-black text-xl lg:text-4xl font-semibold">Your cart is empty</p>
       </div>
     )
   ) : (
     // LOGIN MESSAGE
     <div className="border-b p-20 mx-20 text-center">
-      <p className="text-xl lg:text-4xl font-semibold">Please login to view cart</p>
+      <p className="text-black text-xl lg:text-4xl font-semibold">Please login to view cart</p>
     </div>
   )}
 

@@ -22,7 +22,7 @@ const Products = () => {
   }, []);
 
   return (
-    <div className="bg-blue-50 min-h-screen w-full">
+    <div className="bg-blue-50 min-h-screen w-full text-black">
        <p className="text-center text-3xl py-10 font-bold">Products</p>
       <div className="flex flex-col gap-5 lg:flex-row lg:justify-between ">
         <div>
@@ -32,7 +32,7 @@ const Products = () => {
           {productData && productData.map((product) => (
             <Link key={product._id} to={`/admin/updateProduct/${product._id}`}>
             <div className="border bg-slate-50 h-full" >
-              <img className="h-[180px] w-[100%]" src={`http://localhost:3000/product-photo/${product._id}`} alt="product-Image"/>
+              <img className="h-[180px] w-[100%]" src={`${import.meta.env.VITE_API_URL}/product-photo/${product._id}`} alt="product-Image"/>
                <p className="ml-3 text-xm">{product.name}</p>
                 <p className="ml-3  font-semibold">₹{product.price}</p>
               </div>

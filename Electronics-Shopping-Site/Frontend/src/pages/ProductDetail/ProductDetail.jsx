@@ -70,14 +70,14 @@ export const ProductDetail = () => {
          
              
         <div className="flex flex-col w-full  lg:w-[50%] gap-2">
-               <p className="text-2xl">{product.name}</p>
-               <p className="text-xl">{product.description}</p>
-               <p className="text-3xl font-semibold">₹{product.price}</p>
+               <p className="text-2xl text-black">{product.name}</p>
+               <p className="text-xl text-black">{product.description}</p>
+               <p className="text-3xl text-black font-semibold">₹{product.price}</p>
                <p className="text-xl text-gray-500">Free Delivery</p>
-               <p className="font-semibold">Available Offer:-</p>
-               <p>✅  Bank Offer5% cashback on Axis Bank Credit Card upto ₹4,000 per statement quarterT&C</p>
-                <p>✅  Bank Offer5% cashback on Axis Bank Debit Card up to ₹750T&C</p>
-                <p>✅  Bank Offer5% cashback on SBI Credit Card upto ₹4,000 per calendar quarterT&C</p>
+               <p className="font-semibold text-black">Available Offer:-</p>
+               <p className="text-black">✅  Bank Offer5% cashback on Axis Bank Credit Card upto ₹4,000 per statement quarterT&C</p>
+                <p className="text-black">✅  Bank Offer5% cashback on Axis Bank Debit Card up to ₹750T&C</p>
+                <p className="text-black">✅  Bank Offer5% cashback on SBI Credit Card upto ₹4,000 per calendar quarterT&C</p>
 
               <div className="flex justify-between gap-5 mt-5">
                 <button className="border p-2 w-full bg-blue-800 text-white font-semibold text-xl rounded-md active:bg-red-600" onClick={handleCart}>Add</button>

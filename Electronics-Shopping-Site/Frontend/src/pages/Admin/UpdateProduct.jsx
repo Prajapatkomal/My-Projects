@@ -139,7 +139,7 @@ const UpdateProduct = () => {
   }
 
   return (
-    <div className="bg-blue-50 min-h-screen w-full ">
+    <div className="bg-blue-50 min-h-screen w-full  text-black">
       <p className="text-center text-3xl py-10 font-bold">Upadte Product</p>
       <div className="flex justify-between mr-[100px] ">
         <div>

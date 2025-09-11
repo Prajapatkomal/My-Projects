@@ -86,11 +86,11 @@ const CreateProduct = () => {
   return (
     <div className="bg-blue-50 min-h-screen w-full ">
       <p className="text-center text-3xl py-10 font-bold">Create Product</p>
-      <div className="flex flex-col gap-5 lg:flex-row lg:justify-between lg:mr-[100px] ">
+      <div className="flex flex-col w-[300px]  lg:w-full gap-5 lg:flex-row lg:justify-between lg:mr-20  ">
         <div>
           <AdminMenu />
         </div>
-        <div className=" lg:ml-[250px] w-full">
+        <div className="ml-5 lg:ml-[180px] w-full mr-10">
         <form
           onSubmit={handleSubmit}
           className="flex flex-col gap-5 w-full  "

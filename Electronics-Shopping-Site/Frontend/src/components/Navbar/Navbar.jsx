@@ -84,28 +84,28 @@ const Navbar = () => {
 
        <SearchInput/>
       <div className="flex gap-5">
-        <div onClick={()=>{navigate("/")}} className="text-2xl"><AiOutlineHome/></div>
+        <div onClick={()=>{navigate("/")}} className="text-2xl  text-black"><AiOutlineHome/></div>
         <button  onClick={()=>token? handleLogout() : navigate("/login")} className="bg-red-600 px-2 border-0 text-white rounded-md active:bg-red-700 cursor-pointer">{token?"Logout":"Login"}</button>
 
 
        {role==="admin"?
        <div>
-          <Link to="/adminDashboard" className="border-b-2 border-black cursor-pointer font-semibold text-[18px]  active:text-blue-700">Admin</Link>
+          <Link to="/adminDashboard" className="text-black border-b-2 border-black cursor-pointer font-semibold text-[18px]  active:text-blue-700">Admin</Link>
         </div>
         :
-        <div className="text-2xl relative group cursor-pointer">
+        <div className="text-2xl relative group cursor-pointer  text-black">
           <FaRegUserCircle />
           <div className=" hidden group-hover:block text-sm shadow-md absolute p-5 -left-4 bg-slate-50">
             <p
               onClick={()=>navigate("/user-dashboard")}
-              className="cursor-pointer font-semibold text-[16px] hover:text-blue-600"
+              className="text-black cursor-pointer font-semibold text-[16px] hover:text-blue-600"
             >
               Profile
             </p>
 
              <p
               onClick={()=>navigate("/user-orders")}
-              className="cursor-pointer font-semibold text-[16px] hover:text-blue-600"
+              className=" text-black cursor-pointer font-semibold text-[16px] hover:text-blue-600"
             >
               Orders
             </p>
@@ -115,8 +115,8 @@ const Navbar = () => {
 
 }
 
-        <div  onClick={()=>navigate("/cart")} className="text-2xl relative cursor-pointer mr-2">
-          <FiShoppingCart />
+        <div  onClick={()=>navigate("/cart")} className="text-2xl relative cursor-pointer mr-2 text-black">
+          <FiShoppingCart/>
           <div className="w-4 h-5 bg-red-600 absolute -top-4 -right-2 rounded-sm">
             <p className="text-sm text-center text-white">{cart?cart.length:0}</p>
           </div>

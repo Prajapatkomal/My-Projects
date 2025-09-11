@@ -50,7 +50,7 @@ const UserOrders = () => {
               {orders?.map((o, i) => {                                       {/* Order details row */}
                 return (
                   <>
-                  <tr key={i} className="bg-slate-50">
+                  <tr key={i} className="bg-slate-50 text-black">
                     <th>{i + 1}</th>
                     <td>{o?.status}</td>
                     <td>{o?.buyer?.userName}</td>
@@ -63,14 +63,14 @@ const UserOrders = () => {
             <div  className="p-4 flex flex-wrap gap-10"> 
                     {o?.products.map((p, i) => (                              
                 <div key={i}
-            className=" w-[350px] rounded-xl shadow-sm flex items-center gap-5 p-4 bg-white"
+            className=" w-[350px] rounded-xl shadow-sm flex items-center gap-5 p-4 bg-white text-black"
           >
             <img
               className="h-28 w-28 object-cover rounded-lg"
               src={`${import.meta.env.VITE_API_URL}/product-photo/${p._id}`}
               alt={p.name}
             />
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-col justify-center text-black">
               <p className="font-semibold text-xs">{p.name}</p>
               <p className="text-gray-500 text-sm">
                 {p.description.substring(0,20)}...

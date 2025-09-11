@@ -66,11 +66,11 @@ const  filterProducts = products?.filter(p=>p.category === categoryId)
           <CategoryNav/>
            <div className="flex flex-col px-6 w-full lg:flex-row  gap-10 mt-32 lg:px-12">
                  <div className=" flex flex-col  border-r lg:w-[30%]  mt-10 ">
-                    <p className="text-xl mt-10">Filter By Price</p><br/>
+                    <p className="text-xl mt-10 text-black">Filter By Price</p><br/>
                                      {Prices.map((p)=>(
                                        <div key={p._id} className="flex flex-col mt-2 cursor-pointer">
                                          <div className="flex gap-2">
-                                         <input className="cursor-pointer" type="radio"  name="price" onChange={()=>setRadio(p.arr)}/><p>{p.name}</p>
+                                         <input className="cursor-pointer text-black" type="radio"  name="price" onChange={()=>setRadio(p.arr)}/><p className="text-black">{p.name}</p>
                                        </div>
                                        </div>
                                      ))}
@@ -82,7 +82,7 @@ const  filterProducts = products?.filter(p=>p.category === categoryId)
                <div className="bg-slate-200 rounded-t-md "><img className="p-3 mix-blend-multiply w-[300px]" src={`${import.meta.env.VITE_API_URL}/product-photo/${product._id}`} alt="product-Image"/></div>
                <p className=" ml-3 text-gray-800  text-xs mt-1 lg:text-[15px]">{product.name}</p>
                 <p className=" ml-3 mt-1 text-gray-500  text-xs">{product.description.substring(0,20)}...</p>
-                <p className="ml-3  mt-2 font-semibold text-xs lg:text-[18px]">₹{product.price}</p>
+                <p className="ml-3  mt-2   text-black font-semibold text-xs lg:text-[18px]">₹{product.price}</p>
                  <p className="ml-3 mt-1 text-gray-700 text-xs lg:text-xs">Free delivery</p>
                  </Link>
           ))}

@@ -76,7 +76,7 @@ const Home = () => {
                <p className=" ml-3 text-black  text-xm mt-1">{product.name}</p>
                <p className=" ml-3 text-gray-500  text-xs">{product.description.substring(0,25)}...</p>
                <div className="flex justify-between mt-1">
-                     <p className="ml-3 font-semibold">₹{product.price}</p>
+                     <p className=" text-black ml-3 font-semibold">₹{product.price}</p>
                      <div className="h-4  mt-1 text-xs text-white bg-gradient-to-r from-white to-green-700  px-5 mr-4 rounded-r-3xl">Easy EMI</div>
                </div>
                  <p className="ml-3 text-gray-700">Free delivery</p>
