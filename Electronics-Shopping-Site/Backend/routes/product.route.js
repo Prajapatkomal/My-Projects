@@ -22,8 +22,6 @@ productRouter.post(
       const { name, description, price, quantity, category, shipping } =
         req.fields;
       const { photo } = req.files;
-      console.log("FIELDS:", req.fields);
-      console.log("FILES:", req.files);
 
       //validation
       switch (true) {
