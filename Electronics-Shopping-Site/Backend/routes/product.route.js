@@ -68,7 +68,6 @@ productRouter.get("/products", async (req, res) => {
   try {
     const products = await ProductModel.find()
       .select("-photo")
-      .limit(12)
       .sort({ createdAt: -1 });
     return res.status(200).json({ msg: "All products", products ,totalProducts: products.length});
   } catch (error) {

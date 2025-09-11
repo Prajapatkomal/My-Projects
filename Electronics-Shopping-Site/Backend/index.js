@@ -12,7 +12,11 @@ const { orderRouter } = require("./routes/order.route")
 const { cartRouter } = require("./routes/cart.route")
 
 
-app.use(cors());
+app.use(cors({
+  origin: "*", // or specific domains
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: false // 
+}));
 
 PORT = process.env.PORT || 8080
 

@@ -67,6 +67,7 @@ orderRouter.get("/user/orders",auth,async(req,res)=>{
       const orders =  await OrderModel
       .find({ "buyer.id": req.userId })
       .populate("products","-photo")
+       .sort({createdAt:-1})
       res.status(200).json({msg:"All orders fetched",orders})
 
   }catch(error){
