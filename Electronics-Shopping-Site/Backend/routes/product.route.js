@@ -64,10 +64,16 @@ productRouter.post(
 
 productRouter.get("/products", async (req, res) => {
   try {
+     const page = parseInt(req.query.page) || 1;
+    const limit = 12;
+    const skip = (page - 1) * limit;
+
     const products = await ProductModel.find()
       .select("-photo")
+      .skip(skip)
+      .limit(limit)
       .sort({ createdAt: -1 });
-    return res.status(200).json({ msg: "All products", products ,totalProducts: products.length});
+    return res.status(200).json({ msg:"All products", products});
   } catch (error) {
     console.log(error);
     res.status(500).json({msg:"error in getting product",error});
@@ -95,7 +101,6 @@ productRouter.get("/product-photo/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const product = await ProductModel.findById(id).select("photo");
-    console.log(product);
     if (product && product.photo && product.photo.data) {
       res.set("Content-type", product.photo.contentType);
       return res.status(200).send(product.photo.data);
