@@ -79,7 +79,7 @@ const  filterProducts = products?.filter(p=>p.category === categoryId)
                   <div className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-16">
           {filterProducts && filterProducts.map((product) => (
              <Link to={`/product/${product._id}`}  key={product._id} className="rounded-md bg-white shadow-md p-2">
-               <div className="bg-slate-200 rounded-t-md "><img className="p-3 mix-blend-multiply w-[300px]" src={`${import.meta.env.VITE_API_URL}/product-photo/${product._id}`} alt="product-Image"/></div>
+               <div className="bg-slate-200 rounded-t-md "><img className="p-3 mix-blend-multiply h-[160px] w-full lg:h-[180px]" src={`${import.meta.env.VITE_API_URL}/product-photo/${product._id}`} alt="product-Image"/></div>
                <p className=" ml-3 text-gray-800  text-xs mt-1 lg:text-[15px]">{product.name}</p>
                 <p className=" ml-3 mt-1 text-gray-500  text-xs">{product.description.substring(0,20)}...</p>
                 <p className="ml-3  mt-2   text-black font-semibold text-xs lg:text-[18px]">₹{product.price}</p>

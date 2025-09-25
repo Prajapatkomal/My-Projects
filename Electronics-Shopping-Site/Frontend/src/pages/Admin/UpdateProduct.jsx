@@ -100,11 +100,10 @@ const UpdateProduct = () => {
         {
           headers: {
             "Content-Type": "multipart/form-data",
-            Authorization: `Bearer ${token}`,
+            Authorization: `Beatrer ${token}`,
           },
         }
       );
-      console.log(res.data);
       toast(res.data.msg);
       setProductInfo(initialValue); // clear input and   reset form
       navigate("/admin/products")

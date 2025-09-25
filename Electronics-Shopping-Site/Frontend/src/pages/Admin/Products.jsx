@@ -5,21 +5,25 @@ import api from "../../api/api";
 
 const Products = () => {
   const [productData, setProductData] = useState(null);
-
+  const [page, setPage] = useState(1);
   // fetching prduct -----------
-  const fetchProducts = async () => {
-    try {
-      const res = await api.get("/products");
-      console.log(res.data);
-      setProductData(res.data?.products);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
+  const loadProducts  = async () => {
+       try {
+         const {data} = await api.get(`/products?page=${page}`);
+         if (page === 1) {
+         setProductData(data.products);
+       } else {
+         setProductData((prev) => [...prev, ...data.products]);
+       }
+        
+       } catch (error) {
+         console.log(error);
+       }
+     };
+   
   useEffect(() => {
-    fetchProducts();
-  }, []);
+    loadProducts();
+  }, [page]);
 
   return (
     <div className="bg-blue-50 min-h-screen w-full text-black">
@@ -39,6 +43,11 @@ const Products = () => {
               </Link>
           ))}
         </div>
+      </div>
+       <div className="flex justify-center mt-10">
+         <button className=" bg-black text-white px-2 rounded-sm"  onClick={() => setPage(page + 1)}>
+        Load More
+      </button>
       </div>
     </div>
   );

@@ -10,39 +10,48 @@ import api from "../../api/api"
 
 
 const Home = () => {
-    const [productData, setProductData] = useState(null);
+    const [productData, setProductData] = useState([]);
+    const [page, setPage] = useState(1);
     const [radio, setRadio] = useState([]);
   
    
 
     // fetching prduct -----------
-    const fetchProducts = async () => {
+    const loadProducts  = async () => {
       try {
-        const res = await api.get("/products");
-        setProductData(res.data?.products);
+        const {data} = await api.get(`/products?page=${page}`);
+        if (page === 1) {
+        setProductData(data.products);
+      } else {
+        setProductData((prev) => [...prev, ...data.products]);
+      }
+       
       } catch (error) {
         console.log(error);
       }
     };
   
     useEffect(() => {
-      fetchProducts();
-    }, []);
+      loadProducts();
+    }, [page]);
   
 
   const filterProducts = async()=>{
    try {
         const {data} = await api.post("/product-filterByPrice",{radio})
-        setProductData(data?.products)
+        setProductData(data?.products || [])
    } catch (error) {
      console.log(error)
    }
   }
 
-  useEffect(() => {
+ useEffect(() => {
+    if (radio.length > 0) {
       filterProducts();
-    }, [radio,]);
-  
+    } else {
+      setPage(1); // reset pagination if filter is cleared
+    }
+  }, [radio]);
 
 
       if (!productData) {
@@ -72,18 +81,23 @@ const Home = () => {
                   <div className="px-10 w-full grid grid-cols-2 gap-4  md:grid-cols-3 lg:grid-cols-4 lg:gap-10 lg:mt-12 lg:px-2">
           {productData && productData.map((product) => (
             <Link to={`/product/${product._id}`} key={product._id} className="rounded-md bg-white shadow-md " >
-               <div className="bg-slate-200 rounded-t-md  "><img className="p-3 mix-blend-multiply w-full " src={`${import.meta.env.VITE_API_URL}/product-photo/${product._id}`} alt="product-Image"/></div>
+               <div className="bg-slate-200 rounded-t-md  "><img className="p-3 mix-blend-multiply h-[180px] w-full lg:h-[200px] " src={`${import.meta.env.VITE_API_URL}/product-photo/${product._id}`} alt="product-Image"/></div>
                <p className=" ml-3 text-black  text-xm mt-1">{product.name}</p>
                <p className=" ml-3 text-gray-500  text-xs">{product.description.substring(0,25)}...</p>
                <div className="flex justify-between mt-1">
                      <p className=" text-black ml-3 font-semibold">₹{product.price}</p>
-                     <div className="h-4  mt-1 text-xs text-white bg-gradient-to-r from-white to-green-700  px-5 mr-4 rounded-r-3xl">Easy EMI</div>
+                     <div className="mr-1 h-4 px-3 mt-1 text-xs text-white bg-gradient-to-r from-white to-green-700  lg:px-5  rounded-r-3xl lg:mr-4">Easy EMI</div>
                </div>
                  <p className="ml-3 text-gray-700">Free delivery</p>
               </Link>
           ))}
         </div>
         </div>
+        <div className="flex justify-center mt-10">
+         <button className=" bg-black text-white px-2 rounded-sm"  onClick={() => setPage(page + 1)}>
+        Load More
+      </button>
+      </div>
     </div>
      <Footer/>
      </>
